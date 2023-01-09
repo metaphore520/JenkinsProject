@@ -35,10 +35,11 @@ pipeline {
                         }
                         stage('Integration test') {
                         agent {
-                                any {
+                                docker {
 
 					 reuseNode false
 					image 'hello-world'
+					label 'docker-slave'
                                         }
 			}
 				steps {
